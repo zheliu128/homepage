@@ -31,6 +31,10 @@ export default {
         {
           name: 'Google',
           url: 'https://www.google.com/search?q='
+        },
+        {
+          name: 'Yandex',
+          url: 'https://yandex.com/search/?text='
         }
       ]
     }
@@ -56,12 +60,12 @@ export default {
 <style scoped>
 .search-container {
   display: flex;
+  margin: 0 auto;
   font-size: 16px;
   /* 默认基准（用户未缩放时） */
   justify-content: center;
   gap: 0px;
-  margin-top: 0;
-  width: 100%;
+  width: 82%;
 }
 
 input {
@@ -81,11 +85,10 @@ input {
 }
 
 select {
-  width: 6%;
-  min-width: 40px;
+  min-width: min-content;
   max-width: max-content;
   border: none;
-  padding: 0px;
+  padding: 0 8px;
   outline: none;
   border-radius: 15px 0 0 15px;
   background-color: rgba(255, 255, 255, 0.3);
@@ -94,8 +97,14 @@ select {
   white-space: nowrap;
   /* 禁止文字换行 */
   overflow: hidden;
-  appearance: none; /* 移除默认的下拉箭头 */
+  appearance: none;
+  /* 移除默认的下拉箭头 */
+  cursor: pointer;
   font-size: clamp(5px, 1.5vw + 0.2rem, 16px);
+}
+
+select:hover {
+  background-color: #cccccc25;
 }
 
 button {
@@ -117,6 +126,6 @@ button {
 }
 
 button:hover {
-  background: rgba(34, 78, 239, 0.311);
+  background-color: rgba(34, 78, 239, 0.311);
 }
 </style>
